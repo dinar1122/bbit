@@ -1,9 +1,6 @@
 import {apiFetch} from './baseURL'
 
 export const Api = {
-  async fetchAllPosts() {
-    return await apiFetch('/posts')
-  },
   
   async fetchAlbumPhotoById(id) {
     let ids = null
@@ -13,7 +10,4 @@ export const Api = {
     return await apiFetch(`/photos?${id ?`albumId=${ids ?? id}`:``}`)
   },
   
-  async create(post) {
-    return await apiFetch('/posts', post)
-  }
 }
